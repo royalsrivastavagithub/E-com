@@ -1,0 +1,20 @@
+{
+  "name": "e-com",
+  "version": "1.0.0",
+  "description": "developing e-commerce fullstack in microservices",
+  "homepage": "https://github.com/royalsrivastavagithub/E-com#readme",
+  "bugs": {
+    "url": "https://github.com/royalsrivastavagithub/E-com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royalsrivastavagithub/E-com.git"
+  },
+  "license": "ISC",
+  "author": "Royal Srivastava",
+  "type": "module",
+  "scripts": {"backend:authentication:dev":"chokidar \"backend/services/authentication/**\" -c \"cd backend/services/authentication && go run .\" --initial"},
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
+  }
+}
