@@ -13,7 +13,9 @@
   "license": "ISC",
   "author": "Royal Srivastava",
   "type": "module",
-  "scripts": {"backend:authentication:dev":"chokidar \"backend/services/authentication/**\" -c \"cd backend/services/authentication && go run .\" --initial"},
+  "scripts": {
+    "backend:authentication:dev":"chokidar \"backend/services/authentication/**\" -c \"cd backend/services/authentication && go run .\" --initial"
+  },
   "devDependencies": {
     "chokidar-cli": "^3.0.0"
   }
