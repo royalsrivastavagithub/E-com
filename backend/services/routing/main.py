@@ -15,7 +15,7 @@ class HelloInput(BaseModel):
 @app.post("/")
 async def say_hello(input: HelloInput):
     # gRPC channel to the gRPC server
-    async with grpc.aio.insecure_channel("localhost:50051") as channel:
+    async with grpc.aio.insecure_channel("test-service:50051") as channel:
         stub = hello_pb2_grpc.HelloServiceStub(channel)
         request = hello_pb2.HelloRequest(name=input.name)
         response = await stub.SayHello(request)

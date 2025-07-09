@@ -1,0 +1,20 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: e-com
+build:
+  artifacts:
+    - image: routing-service
+      context: backend/services/routing
+      docker:
+        dockerfile: dockerfile
+    - image: test-service
+      context: backend/services/test_service
+      docker:
+        dockerfile: dockerfile
+manifests:
+  rawYaml:
+    - backend/k8s/routing/deployment.yaml
+    - backend/k8s/routing/service.yaml
+    - backend/k8s/test_service/deployment.yaml
+    - backend/k8s/test_service/service.yaml

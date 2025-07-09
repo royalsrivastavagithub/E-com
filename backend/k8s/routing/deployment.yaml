@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: routing-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: routing-service
+  template:
+    metadata:
+      labels:
+        app: routing-service
+    spec:
+      containers:
+        - name: routing-service
+          image: routing-service:latest
+          ports:
+            - containerPort: 8000

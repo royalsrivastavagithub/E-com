@@ -1,0 +1,27 @@
+# ──────── Build Stage ────────
+FROM golang:1.24.4 AS builder
+
+WORKDIR /app
+
+# Copy go mod/sum and download dependencies (better cache)
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the source code
+COPY . .
+
+# Build the Go binary
+RUN CGO_ENABLED=0 GOOS=linux go build -o main .
+
+# ──────── Final Distroless Stage ────────
+FROM gcr.io/distroless/static-debian12:nonroot
+
+WORKDIR /app
+
+COPY --from=builder /app/main .
+
+# Expose gRPC port (for docs only — has no effect in distroless)
+EXPOSE 50051
+
+# Use absolute path for distroless (no shell)
+ENTRYPOINT ["/app/main"]
