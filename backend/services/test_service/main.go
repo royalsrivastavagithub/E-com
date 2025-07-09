@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	pb "protobuf" // This should match your go_package or go.mod name
+	pb "test_service/protobuf"
 
 	"google.golang.org/grpc"
 )

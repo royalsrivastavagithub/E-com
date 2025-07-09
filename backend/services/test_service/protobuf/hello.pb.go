@@ -121,7 +121,8 @@ const file_hello_proto_rawDesc = "" +
 	"\rHelloResponse\x12\x12\n" +
 	"\x04data\x18\x01 \x01(\tR\x04data2E\n" +
 	"\fHelloService\x125\n" +
-	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponseB\x17Z\x15test_service/protobufb\x06proto3"
+	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponseB\fZ\n" +
+	"./protobufb\x06proto3"
 
 var (
 	file_hello_proto_rawDescOnce sync.Once
