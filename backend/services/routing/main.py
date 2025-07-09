@@ -12,7 +12,7 @@ class HelloInput(BaseModel):
     name: str
 
 
-@app.post("/say-hello")
+@app.post("/")
 async def say_hello(input: HelloInput):
     # gRPC channel to the gRPC server
     async with grpc.aio.insecure_channel("localhost:50051") as channel:

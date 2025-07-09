@@ -18,7 +18,7 @@ type server struct {
 func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloResponse, error) {
 	log.Printf("Received request for name: %s", req.GetName())
 	return &pb.HelloResponse{
-		Data: "hello microservices",
+		Data: "hello " + req.GetName(),
 	}, nil
 }
 
