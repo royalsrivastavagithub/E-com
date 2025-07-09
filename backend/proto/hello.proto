@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "test_service/protobuf";
+// The service definition
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+// Request message
+message HelloRequest {
+  string name = 1;
+}
+
+// Response message
+message HelloResponse {
+  string data = 1;
+}
